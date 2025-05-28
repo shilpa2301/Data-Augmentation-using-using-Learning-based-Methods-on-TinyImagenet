@@ -1,0 +1,3 @@
+best acc - top1: 99.2000, top5: 96.7200 at iteration: 0
+best acc - top1: 98.4600, top5: 93.0800 at iteration: 1
+best acc - top1: 97.3800, top5: 89.6600 at iteration: 2

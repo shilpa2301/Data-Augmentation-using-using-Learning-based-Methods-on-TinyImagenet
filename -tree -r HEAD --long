@@ -1,0 +1,42 @@
+[33m6e0b6c5[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m adapt_4
+[33m140712a[m adapted_3
+[33m49abf23[m adapted_2
+[33m0418065[m adapted
+[33m9ee02b8[m[33m ([m[1;31morigin/main[m[33m)[m Update saliencymix.py
+[33mea2edaf[m Update README.md
+[33m909a832[m Update command.sh
+[33m5327435[m Update saliencymix.py
+[33mf74ebd8[m Update README.md
+[33md41aa08[m Update train.py
+[33mc8ea795[m Update README.md
+[33mf93249d[m Delete train_sal2rand.py
+[33m1f44720[m Add files via upload
+[33mbf04a29[m Add files via upload
+[33maac5d0f[m Update README.md
+[33m111a50b[m Update README.md
+[33m107e13d[m Update README.md
+[33m08c8056[m Update README.md
+[33m1b0996b[m Update README.md
+[33m4ea1ba0[m Update README.md
+[33m8cb0fc0[m Update README.md
+[33me10243b[m Update README.md
+[33m2bafa51[m Update README.md
+[33m47cb86b[m Update saliencymix.py
+[33m9f990e0[m Update README.md
+[33m3b90c20[m Update README.md
+[33m6118b60[m Create README.md
+[33m21a007f[m Add files via upload
+[33mea980ca[m Add files via upload
+[33me1fbefe[m Add files via upload
+[33m1b0435b[m Add files via upload
+[33m5243dee[m Delete wide_resnet.cpython-36.pyc
+[33m14a00a4[m Delete resnet.cpython-36.pyc
+[33m4e817aa[m Delete __init__.cpython-36.pyc
+[33ma1fe28c[m Delete wide_resnet.py
+[33m188e1f2[m Delete resnet.py
+[33mfc01574[m Delete saliencymix.py
+[33m47ffd0f[m Delete command.sh
+[33mdfffea6[m Delete cifar10_resnet50.csv
+[33m24e0a83[m Delete cifar10_resnet18.csv
+[33mcc9a50a[m Delete cifar100_resnet18.csv
+[33m3e10708[m Add files via upload

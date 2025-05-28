@@ -1,0 +1,22 @@
+
+srun -p cisl --gres=gpu:1 --mem=45g --time=24:00:00 --pty bash
+sbatch -p batch -t 2-00:00:00 run_job.sh
+sbatch -p cisl --gres=gpu:1 --mem=45g --time=10-0:00:00 run_job.sh 
+
+
+url:
+https://github.com/afm-shahab-uddin/SaliencyMix#
+
+Train:
+python train.py \
+--net_type resnet \
+--dataset imagenet \
+--batch_size 256 \
+--lr 0.1 \
+--depth 50 \
+--epochs 300 \
+--expname ResNet50 \
+-j 40 \
+--beta 1.0 \
+--salmix_prob 1.0 \
+--no-verbose
