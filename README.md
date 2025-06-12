@@ -1,19 +1,19 @@
 # SaliencyMix
-SaliencyMix: A Saliency Guided Data Augmentation Strategy for Better Regularization
+SaliencyMix is a Saliency Guided Data Augmentation Strategy for Better Regularization
 The original code of SaliencyMix is adapted from ImageNet to TinyImagenet
-The baseline random erase is written from scratch, the main function is adapted from official implementation of randomErase.
-Both teh Models are run on Resnet50 for comparison 
+The baseline random erase is written from scratch, the core function is adapted from official implementation of randomErase.
+The evaluation metrics for Random Erase is adapted as per Saliency Mix.
+The preprocessing is done from scratch using Normalizing transform with Imagenet parameter values.
+Both the Models are run on Resnet50 for comparison.
 
 
-### Requirements  
-- Python3
-- PyTorch (> 1.0)
-- torchvision (> 0.2)
-- NumPy
-- OpenCV-contrib-python (4.2.0.32)
+### Requirements : Environment File provided, tested on CUDA 12.6  
+```
+conda env create -f environment.yml
+```
 
 
-#### TinyImageNet
+#### SaliencyMix
 -To train ResNet50 on TinyImageNet with SaliencyMix and traditional data augmentation:    
 ```
 python SaliencyMix-ImageNet/train.py \
@@ -30,6 +30,7 @@ python SaliencyMix-ImageNet/train.py \
 --no-verbose > run_job_saliency.log 2>&1
 ```
 
+#### RandomErase
 -To train ResNet50 on TinyImageNet with RandomErase:    
 ```
 python SaliencyMix-ImageNet/baseline_random_erase/resnet.py > run_job_randomerase.log 2>&1
@@ -38,30 +39,6 @@ python SaliencyMix-ImageNet/baseline_random_erase/resnet.py > run_job_randomeras
 -To generate comparison plots:    
 ```
 python compare_plots.py 
-```
-
-
-### Test Examples using ImageNet Pretrained models
-
-- Trained models can be downloaded from [here](https://drive.google.com/drive/folders/1vnJHtgzcBInuPZVkwQxQ5A5SE_i_-EON?usp=sharing)
-
-- ResNet-50
-```
-python test.py \
---net_type resnet \
---dataset imagenet \
---batch_size 64 \
---depth 50 \
---pretrained /runs/ResNet50_SaliencyMix_21.26/model_best.pth.tar
-```
-- ResNet-101
-```
-python test.py \
---net_type resnet \
---dataset imagenet \
---batch_size 64 \
---depth 101 \
---pretrained /runs/ResNet101_SaliencyMix_20.09/model_best.pth.tar
 ```
 
 
