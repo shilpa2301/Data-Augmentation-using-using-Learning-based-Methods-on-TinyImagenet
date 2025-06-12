@@ -1,3 +1,0 @@
-dune1.cris.local
-Sun May 25 10:51:53 PDT 2025
-/home/csgrad/smukh039/miniforge3/envs/da_env/bin/python
