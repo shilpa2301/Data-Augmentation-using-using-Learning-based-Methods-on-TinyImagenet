@@ -1,12 +1,8 @@
 # SaliencyMix
 SaliencyMix: A Saliency Guided Data Augmentation Strategy for Better Regularization
-
-
-CIFAR training and testing code is based on 
-- [Cutout](https://github.com/uoguelph-mlrg/Cutout)
-
-The ImageNet is based on
-- [Cutmix-PyTorch](https://github.com/clovaai/CutMix-PyTorch)
+The original code of SaliencyMix is adapted from ImageNet to TinyImagenet
+The baseline random erase is written from scratch, the main function is adapted from official implementation of randomErase.
+Both teh Models are run on Resnet50 for comparison 
 
 
 ### Requirements  
@@ -17,91 +13,10 @@ The ImageNet is based on
 - OpenCV-contrib-python (4.2.0.32)
 
 
-### CIFAR
-Please use "SaliencyMix_CIFAR" directory
-
-#### CIFAR 10
--To train ResNet18 on CIFAR10 with SaliencyMix and traditional data augmentation:    
+#### TinyImageNet
+-To train ResNet50 on TinyImageNet with SaliencyMix and traditional data augmentation:    
 ```
-CUDA_VISIBLE_DEVICES=0,1 python saliencymix.py \
---dataset cifar10 \
---model resnet18 \
---beta 1.0 \
---salmix_prob 0.5 \
---batch_size 128 \
---data_augmentation \
---learning_rate 0.1
-```
-
--To train ResNet50 on CIFAR10 with SaliencyMix and traditional data augmentation:    
-```
-CUDA_VISIBLE_DEVICES=0,1 python saliencymix.py \
---dataset cifar10 \
---model resnet50 \
---beta 1.0 \
---salmix_prob 0.5 \
---batch_size 128 \
---data_augmentation \
---learning_rate 0.1
-```
-
--To train WideResNet on CIFAR10 with SaliencyMix and traditional data augmentation:    
-```
-CUDA_VISIBLE_DEVICES=0,1 python saliencymix.py \
---dataset cifar10 \
---model wideresnet \
---beta 1.0 \
---salmix_prob 0.5 \
---batch_size 128 \
---data_augmentation \
---learning_rate 0.1
-```
-
-
-#### CIFAR 100
--To train ResNet18 on CIFAR100 with SaliencyMix and traditional data augmentation:    
-```
-CUDA_VISIBLE_DEVICES=0,1 python saliencymix.py \
---dataset cifar100 \
---model resnet18 \
---beta 1.0 \
---salmix_prob 0.5 \
---batch_size 128 \
---data_augmentation \
---learning_rate 0.1
-```
-
--To train ResNet50 on CIFAR100 with SaliencyMix and traditional data augmentation:    
-```CUDA_VISIBLE_DEVICES=0,1 python saliencymix.py \
---dataset cifar100 \
---model resnet50 \
---beta 1.0 \
---salmix_prob 0.5 \
---batch_size 128 \
---data_augmentation \
---learning_rate 0.1
-```
-
--To train WideResNet on CIFAR100 with SaliencyMix and traditional data augmentation:    
-```
-CUDA_VISIBLE_DEVICES=0,1 python saliencymix.py \
---dataset cifar100 \
---model wideresnet \
---beta 1.0 \
---salmix_prob 0.5 \
---batch_size 128 \
---data_augmentation \
---learning_rate 0.1
-```
-
-
-### ImageNet
--Please use "SaliencyMix-ImageNet" directory
-
-### Train Examples
-- ImageNet with 4 NVIDIA GeForce RTX 2080 Ti GPUs 
-```
-python train.py \
+python SaliencyMix-ImageNet/train.py \
 --net_type resnet \
 --dataset imagenet \
 --batch_size 256 \
@@ -112,8 +27,19 @@ python train.py \
 -j 40 \
 --beta 1.0 \
 --salmix_prob 1.0 \
---no-verbose
+--no-verbose > run_job_saliency.log 2>&1
 ```
+
+-To train ResNet50 on TinyImageNet with RandomErase:    
+```
+python SaliencyMix-ImageNet/baseline_random_erase/resnet.py > run_job_randomerase.log 2>&1
+```
+
+-To generate comparison plots:    
+```
+python compare_plots.py 
+```
+
 
 ### Test Examples using ImageNet Pretrained models
 
@@ -137,3 +63,16 @@ python test.py \
 --depth 101 \
 --pretrained /runs/ResNet101_SaliencyMix_20.09/model_best.pth.tar
 ```
+
+
+# Model Performance
+
+## Accuracy Plot
+![Combined Accuracy Plot](combined_accuracy_plot.png)
+
+## Error Plot
+![Combined Error Plot](combined_error_plot.png)
+
+## Loss Plot
+![Combined Loss Plot](combined_loss_plot.png)
+
