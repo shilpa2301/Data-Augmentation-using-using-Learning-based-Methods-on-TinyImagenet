@@ -53,3 +53,6 @@ python compare_plots.py
 ## Loss Plot
 ![Combined Loss Plot](combined_loss_plot.png)
 
+## Acknowledgments
+- [**SaliencyMix**](https://github.com/afm-shahab-uddin/SaliencyMix)
+- [**Random Erasing**](https://github.com/zhunzhong07/Random-Erasing)
