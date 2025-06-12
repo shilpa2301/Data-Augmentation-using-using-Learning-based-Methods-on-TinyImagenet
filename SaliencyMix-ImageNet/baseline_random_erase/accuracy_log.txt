@@ -1,0 +1,2 @@
+Epoch 1: Top-1 Error: 95.9600, Top-5 Error: 84.4600, Loss: 4.8965
+Epoch 2: Top-1 Error: 92.7200, Top-5 Error: 77.8000, Loss: 4.5132
