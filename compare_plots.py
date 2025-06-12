@@ -34,7 +34,7 @@ def plot_loss(epochs1, loss1, epochs2, loss2, output_path):
     plt.plot(epochs2, loss2, label="Random Erase - Loss", color="orange")
     plt.xlabel("Epoch")
     plt.ylabel("Loss")
-    plt.title("Train Loss Comparison")
+    plt.title("Test Loss Comparison")
     plt.legend()
     plt.grid()
     plt.tight_layout()
@@ -83,7 +83,7 @@ if __name__ == "__main__":
     log2_file_path = "run_job_randomerase.log"
 
     # Regex patterns for each log file
-    pattern1 = r"\* Epoch: \[(\d+)/300\]\t Top 1-err (\d+\.\d+)  Top 5-err (\d+\.\d+)\t Train Loss (\d+\.\d+)"
+    pattern1 = r"\* Epoch: \[(\d+)/300\]\t Top 1-err (\d+\.\d+)  Top 5-err (\d+\.\d+)\t Test Loss (\d+\.\d+)"
     pattern2 = r"\* Epoch: \[(\d+)/300\]\s+Top 1-err (\d+\.\d+)\s+Top 5-err (\d+\.\d+)\s+Test Loss (\d+\.\d+)"
 
     # Parse the logs and extract data
