@@ -4,7 +4,9 @@ The original code of SaliencyMix is adapted from ImageNet to TinyImagenet
 The baseline random erase is written from scratch, the core function is adapted from official implementation of randomErase.
 The evaluation metrics for Random Erase is adapted as per Saliency Mix.
 The preprocessing is done from scratch using Normalizing transform with Imagenet parameter values.
-Both the Models are run on Resnet50 for comparison.
+The preprocessing for SaliencyMix includes RandomCrop, RandomHorizontalFlip, Jitter, Lighting and Normalization (provided in the official implementation of SaliencyMix).
+Both the Models are run on Resnet50 for comparison and both are trained from scratch without initializing with pretrained resnet weights. 
+SaliencyMix uses He initialization, whereas the Random Erase uses Xavier initialization.
 
 
 ### Requirements : Environment File provided, tested on CUDA 12.6  
