@@ -1,4 +1,4 @@
-# SaliencyMix
+# Data Augmentation performance comparison for SaliencyMix versus RandomErase
 SaliencyMix is a Saliency Guided Data Augmentation Strategy for Better Regularization
 The original code of SaliencyMix is adapted from ImageNet to TinyImagenet
 The baseline random erase is written from scratch, the core function is adapted from official implementation of randomErase.
