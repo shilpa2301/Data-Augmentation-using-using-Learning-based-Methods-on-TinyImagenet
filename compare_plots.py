@@ -30,8 +30,8 @@ def convert_error_to_accuracy(top1_err, top5_err):
 # Function to plot loss
 def plot_loss(epochs1, loss1, epochs2, loss2, output_path):
     plt.figure(figsize=(8, 6))
-    plt.plot(epochs1, loss1, label="Run Job Saliency - Loss", color="blue")
-    plt.plot(epochs2, loss2, label="Run Job Random Erase - Loss", color="orange")
+    plt.plot(epochs1, loss1, label="Saliency - Loss", color="blue")
+    plt.plot(epochs2, loss2, label="Random Erase - Loss", color="orange")
     plt.xlabel("Epoch")
     plt.ylabel("Loss")
     plt.title("Train Loss Comparison")
@@ -45,10 +45,10 @@ def plot_loss(epochs1, loss1, epochs2, loss2, output_path):
 # Function to plot errors
 def plot_error(epochs1, top1_err1, top5_err1, epochs2, top1_err2, top5_err2, output_path):
     plt.figure(figsize=(8, 6))
-    plt.plot(epochs1, top1_err1, label="Run Job Saliency - Top-1 Error", color="red")
-    plt.plot(epochs1, top5_err1, label="Run Job Saliency - Top-5 Error", color="green")
-    plt.plot(epochs2, top1_err2, label="Run Job Random Erase - Top-1 Error", color="orange")
-    plt.plot(epochs2, top5_err2, label="Run Job Random Erase - Top-5 Error", color="purple")
+    plt.plot(epochs1, top1_err1, label="Saliency - Top-1 Error", color="red")
+    plt.plot(epochs1, top5_err1, label="Saliency - Top-5 Error", color="green")
+    plt.plot(epochs2, top1_err2, label="Random Erase - Top-1 Error", color="orange")
+    plt.plot(epochs2, top5_err2, label="Random Erase - Top-5 Error", color="purple")
     plt.xlabel("Epoch")
     plt.ylabel("Error (%)")
     plt.title("Top-1 and Top-5 Errors Comparison")
@@ -62,10 +62,10 @@ def plot_error(epochs1, top1_err1, top5_err1, epochs2, top1_err2, top5_err2, out
 # Function to plot accuracies
 def plot_accuracy(epochs1, top1_acc1, top5_acc1, epochs2, top1_acc2, top5_acc2, output_path):
     plt.figure(figsize=(8, 6))
-    plt.plot(epochs1, top1_acc1, label="Run Job Saliency - Top-1 Accuracy", color="blue")
-    plt.plot(epochs1, top5_acc1, label="Run Job Saliency - Top-5 Accuracy", color="cyan")
-    plt.plot(epochs2, top1_acc2, label="Run Job Random Erase - Top-1 Accuracy", color="orange")
-    plt.plot(epochs2, top5_acc2, label="Run Job Random Erase - Top-5 Accuracy", color="purple")
+    plt.plot(epochs1, top1_acc1, label="Saliency - Top-1 Accuracy", color="blue")
+    plt.plot(epochs1, top5_acc1, label="Saliency - Top-5 Accuracy", color="cyan")
+    plt.plot(epochs2, top1_acc2, label="Random Erase - Top-1 Accuracy", color="orange")
+    plt.plot(epochs2, top5_acc2, label="Random Erase - Top-5 Accuracy", color="purple")
     plt.xlabel("Epoch")
     plt.ylabel("Accuracy (%)")
     plt.title("Top-1 and Top-5 Accuracies Comparison")
