@@ -2,14 +2,20 @@
 
 ## Summary
 
-- **SaliencyMix** is a Saliency Guided Data Augmentation Strategy for Better Regularization.
+This project compares two data augmentation strategies for image classification on Tiny ImageNet:
+**SaliencyMix**, a saliency-guided data augmentation method, and **Random Erase**, a classic random occlusion method.
+
+- Both methods are applied to ResNet50 models trained from scratch (no pretrained weights).
 - The original SaliencyMix code was adapted from ImageNet to Tiny ImageNet.
-- The baseline Random Erase is written from scratch; its core function is adapted from the official Random Erase implementation.
-- Evaluation metrics for Random Erase were adapted to match those used in SaliencyMix.
-- Preprocessing for Random Erase was implemented from scratch using a Normalizing transform with ImageNet parameter values.
-- Preprocessing for SaliencyMix includes RandomCrop, RandomHorizontalFlip, Jitter, Lighting, and Normalization (from the official SaliencyMix implementation).
-- Both models are trained on ResNet50 for comparison and trained from scratch (without using pretrained ResNet weights).
-- SaliencyMix uses He initialization; Random Erase uses Xavier initialization.
+- The Random Erase baseline is implemented from scratch, with its core function adapted from the official Random Erase code.
+- Evaluation metrics are standardized across both methods for fair comparison.
+- Preprocessing:
+  - Random Erase uses normalization with ImageNet parameter values.
+  - SaliencyMix uses RandomCrop, RandomHorizontalFlip, Jitter, Lighting, and Normalization (from the official SaliencyMix implementation).
+- Initialization:
+  - SaliencyMix uses He initialization.
+  - Random Erase uses Xavier initialization.
+- The project includes training scripts, evaluation, and plots comparing accuracy, error, and loss.
 
 
 ---
