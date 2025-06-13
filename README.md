@@ -1,7 +1,5 @@
 # A Comparative Analysis of Classical and Learning-Based Data Augmentation for Image Classification
 
-## Summary
-
 This project compares two data augmentation strategies for image classification on Tiny ImageNet:
 **SaliencyMix**, a saliency-guided data augmentation method, and **Random Erase**, a classic random occlusion method.
 
