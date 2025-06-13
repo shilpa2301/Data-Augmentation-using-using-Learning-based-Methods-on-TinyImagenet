@@ -1,60 +1,88 @@
-# Data Augmentation performance comparison for SaliencyMix versus RandomErase
-SaliencyMix is a Saliency Guided Data Augmentation Strategy for Better Regularization
-The original code of SaliencyMix is adapted from ImageNet to TinyImagenet
-The baseline random erase is written from scratch, the core function is adapted from official implementation of randomErase.
-The evaluation metrics for Random Erase is adapted as per Saliency Mix.
-The preprocessing is done from scratch using Normalizing transform with Imagenet parameter values.
-The preprocessing for SaliencyMix includes RandomCrop, RandomHorizontalFlip, Jitter, Lighting and Normalization (provided in the official implementation of SaliencyMix).
-Both the Models are run on Resnet50 for comparison and both are trained from scratch without initializing with pretrained resnet weights. 
-SaliencyMix uses He initialization, whereas the Random Erase uses Xavier initialization.
+# Data Augmentation Performance Comparison: SaliencyMix vs. Random Erase
 
+A comparison of SaliencyMix (Saliency Guided Data Augmentation) and Random Erase for image classification on Tiny ImageNet using ResNet50 models trained from scratch.
 
-### Requirements : Environment File provided, tested on CUDA 12.6  
-```
+---
+
+## Summary
+
+SaliencyMix is a Saliency Guided Data Augmentation Strategy for Better Regularization.  
+The original code of SaliencyMix is adapted from ImageNet to Tiny ImageNet.  
+The baseline Random Erase is written from scratch; the core function is adapted from the official implementation of Random Erase.  
+The evaluation metrics for Random Erase are adapted as per SaliencyMix.  
+Preprocessing for Random Erase is implemented from scratch using a Normalizing transform with ImageNet parameter values.  
+The preprocessing for SaliencyMix includes RandomCrop, RandomHorizontalFlip, Jitter, Lighting, and Normalization (provided in the official implementation of SaliencyMix).  
+Both models are run on ResNet50 for comparison and trained from scratch without initializing with pretrained ResNet weights.  
+SaliencyMix uses He initialization, whereas Random Erase uses Xavier initialization.
+
+---
+
+## Requirements
+
+Environment file provided. Tested on **CUDA 12.6**.
+
+```bash
 conda env create -f environment.yml
 ```
 
+---
 
-#### SaliencyMix
--To train ResNet50 on TinyImageNet with SaliencyMix and traditional data augmentation:    
-```
+## Training
+
+### SaliencyMix
+
+To train ResNet50 on Tiny ImageNet with SaliencyMix and traditional data augmentation:
+
+```bash
 python SaliencyMix-ImageNet/train.py \
---net_type resnet \
---dataset imagenet \
---batch_size 256 \
---lr 0.1 \
---depth 50 \
---epochs 300 \
---expname ResNet50 \
--j 40 \
---beta 1.0 \
---salmix_prob 1.0 \
---no-verbose > run_job_saliency.log 2>&1
+  --net_type resnet \
+  --dataset imagenet \
+  --batch_size 256 \
+  --lr 0.1 \
+  --depth 50 \
+  --epochs 300 \
+  --expname ResNet50 \
+  -j 40 \
+  --beta 1.0 \
+  --salmix_prob 1.0 \
+  --no-verbose > run_job_saliency.log 2>&1
 ```
 
-#### RandomErase
--To train ResNet50 on TinyImageNet with RandomErase:    
-```
+### Random Erase
+
+To train ResNet50 on Tiny ImageNet with Random Erase:
+
+```bash
 python SaliencyMix-ImageNet/baseline_random_erase/resnet.py > run_job_randomerase.log 2>&1
 ```
 
--To generate comparison plots:    
-```
-python compare_plots.py 
+---
+
+## Generate Comparison Plots
+
+```bash
+python compare_plots.py
 ```
 
+---
 
 # Model Performance
 
 ## Accuracy Plot
+
 ![Combined Accuracy Plot](combined_accuracy_plot.png)
 
 ## Error Plot
+
 ![Combined Error Plot](combined_error_plot.png)
 
 ## Loss Plot
+
 ![Combined Loss Plot](combined_loss_plot.png)
 
+---
+
 ## Acknowledgments
-- [**SaliencyMix**](https://github.com/afm-shahab-uddin/SaliencyMix)
+
+- [**SaliencyMix**](https://github.com/afm-shahab-uddin/SaliencyMix)  
 - [**Random Erasing**](https://github.com/zhunzhong07/Random-Erasing)
