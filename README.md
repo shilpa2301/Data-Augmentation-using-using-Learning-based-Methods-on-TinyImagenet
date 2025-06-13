@@ -1,8 +1,4 @@
-# Data Augmentation Performance Comparison: SaliencyMix vs. Random Erase
-
-A comparison of SaliencyMix (Saliency Guided Data Augmentation) and Random Erase for image classification on Tiny ImageNet using ResNet50 models trained from scratch.
-
----
+# A Comparative Analysis of Classical and Learning-Based Data Augmentation for Image Classification
 
 ## Summary
 
